@@ -22,4 +22,26 @@ describe('caesarCipher', function(){
   it('encrypting "!" with 1 as key', function(){
     assert.equal(caesarCipher(1,'!', 1), '!');
   });
+  it('encrypting "aa" with 1 as key', function(){
+    assert.equal(caesarCipher(1,'aa', 1), 'bb');
+  });
+  it('encrypting "abc" with 2 as key', function(){
+    assert.equal(caesarCipher(1,'abc', 2), 'cde');
+  });
+  it('encrypting "middle-Outz" with 2 as key', function(){
+    assert.equal(caesarCipher(11,'middle-Outz', 2), 'okffng-Qwvb');
+  });
+  it('encrypting "Hello_World!" with 4 as key', function(){
+    assert.equal(caesarCipher(12,'Hello_World!', 4), 'Lipps_Asvph!');
+  });
+  it('encrypting "www.abc.xy" with 87 as key', function(){
+    assert.equal(caesarCipher(10,'www.abc.xy', 87), 'fff.jkl.gh');
+  });
+  it('encrypting a large string with 62 as key', function(){
+    assert.equal(caesarCipher(90,'!m-rB`-oN!.W`cLAcVbN/CqSoolII!SImji.!w/`Xu`uZa1TWPRq`uRBtok`xPT`lL-zPTc.BSRIhu..-!.!tcl!-U',
+     62), '!w-bL`-yX!.G`mVKmFlX/MaCyyvSS!CSwts.!g/`He`eJk1DGZBa`eBLdyu`hZD`vV-jZDm.LCBSre..-!.!dmv!-E');
+  });
+  it('encrypting "U" with 62 as key', function(){
+    assert.equal(caesarCipher(1,'U', 62), 'E');
+  });   
 });
